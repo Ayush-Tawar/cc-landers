@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Template 3</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    p,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #181818;
+    }
+
+    .navbar {
+      padding: 0 !important;
+    }
+    .navbar-toggler {
+      font-size: unset !important;
+      line-height: unset !important;
+    }
+    .navbar-bg {
+      background-color: #1c1c1c;
+      height: 84px;
+    }
+    .navbar-brand > img {
+      width: 100%;
+    }
+    .nav-link {
+      color: #fff !important;
+      font-size: 13px !important;
+      letter-spacing: 0.6px !important;
+    }
+    .active {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .hero-section-container {
+      background-color: #bada15;
+      padding: 80px 0 0 0;
+    }
+    .hero-section-top-content > h1 {
+      color: #000;
+      font-family: "Teko", sans-serif !important;
+      font-size: 84px;
+      letter-spacing: 2.775px;
+      text-transform: uppercase;
+      line-height: 102.381%;
+    }
+    .hero-section-top-content > h5 {
+      color: #000;
+      font-weight: 300;
+      font-size: 30px;
+      opacity: 0.699999988079071;
+      margin-bottom: 96px !important;
+    }
+    .hero-img {
+      display: block !important;
+      position: relative;
+    }
+    .hero-img-mob {
+      display: none !important;
+    }
+    .price-tag {
+      position: absolute;
+      top: -6%;
+      left: 1%;
+    }
+
+    .price-tag > img {
+      width: 123px;
+    }
+
+    .price-tag > p {
+      position: absolute;
+      top: 36%;
+      left: 22%;
+      font-family: "Roboto", sans-serif;
+      color: #fff;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .hero-section-main-content > h2 {
+      color: #fff;
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: 16.32px;
+      text-transform: uppercase;
+    }
+    .hero-section-main-content > h5 {
+      color: #fff;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 0.22px;
+      margin-bottom: 28px !important;
+    }
+    .hero-section-main-content > p {
+      color: #000;
+      font-family: "Montserrat", sans-serif !important;
+      font-size: 14px;
+      font-style: italic;
+      font-weight: 500;
+      margin-bottom: 30px !important;
+    }
+    .timer {
+      gap: 33px;
+      margin-bottom: 60px;
+    }
+    .timer > p {
+      color: #000;
+      font-family: "Montserrat", sans-serif !important;
+      font-size: 19.557px;
+      font-weight: 600;
+    }
+    .timer-time {
+      color: #fff;
+      font-family: "Montserrat", sans-serif !important;
+      font-size: 34px;
+      font-weight: 600;
+      width: 106px;
+      height: 86px;
+      background-color: black;
+    }
+    .timer-label {
+      color: #fff;
+      font-family: "Montserrat", sans-serif !important;
+      font-size: 11px;
+      opacity: 0.8999999761581421;
+    }
+    .form-main-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 465px;
+    }
+    .form-head {
+      color: #000;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.36px;
+      text-transform: uppercase;
+      opacity: 0.699999988079071;
+      margin-bottom: 15px !important;
+    }
+    .form-wrapper {
+      width: 100%;
+      height: 47px;
+      background-color: #fff;
+    }
+    input {
+      all: unset;
+      background-color: transparent;
+      border: 0;
+      height: 45px;
+      width: 100%;
+      font-family: "Montserrat", sans-serif !important;
+      color: #000;
+      font-size: 13px;
+    }
+    button {
+      all: unset;
+      padding: 0 48px;
+      height: 47px;
+      background-color: #000;
+      color: #fff;
+      font-family: "Montserrat", sans-serif !important;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .section-paragraph {
+      padding: 97px 0 80px 0;
+    }
+    .section-paragraph > p {
+      color: #bada15;
+      font-family: "Teko", sans-serif !important;
+      font-size: 54px;
+      font-weight: 600;
+      letter-spacing: 3px;
+    }
+    .banner-container {
+      background-image: url("./assets/banner.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 806px;
+      padding-top: 75px;
+    }
+    .banner-content > p {
+      color: #fff;
+      font-family: "Montserrat", sans-serif !important;
+      font-size: 70px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      max-width: 60%;
+      line-height: 114.286%;
+    }
+    .features-container {
+      padding: 123px 0;
+    }
+    .features-box > img {
+      width: 107.786px;
+      height: 107.786px;
+    }
+    .features-box > p {
+      color: #fff;
+      text-align: center;
+      font-size: 30px;
+      letter-spacing: 1.293px;
+      margin-top: 20px;
+      line-height: 149.464%;
+      width: 66%;
+    }
+    .footer-banner {
+      background-image: url("./assets/footer-banner.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 1019px;
+    }
+    .footer-banner-content > p {
+      color: #fff;
+      text-align: center;
+      font-family: "Montserrat", sans-serif !important;
+      font-size: 40px;
+      letter-spacing: 0.6px;
+      max-width: 39%;
+      line-height: 130%;
+      margin-bottom: 42px !important;
+    }
+    .footer-content {
+      height: 107px;
+    }
+    .footer-content > p {
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: 0.7px;
+      opacity: 0.699999988079071;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1400px) {
+      .price-tag {
+        top: -10%;
+        left: 0%;
+      }
+      .price-tag > p {
+        top: 36%;
+        left: 18%;
+      }
+    }
+
+    @media screen and (min-width: 600px) and (max-width: 1200px) {
+      .navbar-bg {
+        height: 70px;
+      }
+      .navbar-brand > img {
+        width: 60%;
+      }
+      .nav-link {
+        font-size: 12px !important;
+      }
+      .hero-section-container {
+        padding: 23px 0 0 0;
+      }
+      .hero-section-top-content > h1 {
+        font-size: 48px;
+      }
+      .hero-section-top-content > h5 {
+        font-size: 17.854px;
+        margin-bottom: 54px !important;
+      }
+      .price-tag {
+        top: -12%;
+        left: -6%;
+      }
+      .price-tag > img {
+        width: 123px;
+      }
+      .price-tag > p {
+        top: 35%;
+        left: 19%;
+      }
+      .hero-section-main-content > h2 {
+        font-size: 27.333px;
+        letter-spacing: 6.15px;
+      }
+      .hero-section-main-content > h5 {
+        font-size: 24.455px;
+        margin-bottom: 18px !important;
+      }
+      .hero-section-main-content > p {
+        font-size: 12px;
+        margin-bottom: 14px !important;
+      }
+      .timer {
+        gap: 18px;
+        margin-bottom: 38px;
+      }
+      .timer > p {
+        font-size: 16.307px;
+      }
+      .timer-time {
+        font-size: 28px;
+        width: 89px;
+        height: 72px;
+      }
+      .timer-label {
+        font-size: 10px;
+      }
+      .form-main-wrapper {
+        max-width: 350px;
+      }
+      .form-head {
+        margin-bottom: 10px !important;
+      }
+      .form-wrapper {
+        height: 40px;
+      }
+      input {
+        height: 38px;
+        font-size: 12px;
+      }
+      button {
+        padding: 0 35px;
+        height: 40px;
+        font-size: 12px;
+      }
+      .section-paragraph {
+        padding: 47px 0 34px 0;
+      }
+      .section-paragraph > p {
+        font-size: 28px;
+      }
+      .banner-container {
+        height: 450px;
+        padding-top: 64px;
+        padding-left: 38px;
+      }
+      .banner-content > p {
+        font-size: 32px;
+        max-width: 50%;
+      }
+      .features-container {
+        padding: 82px 0;
+      }
+      .features-box > img {
+        width: 51.591px;
+        height: 51.591px;
+      }
+      .features-box > p {
+        font-size: 16px;
+        margin-top: 18px;
+        width: 62%;
+      }
+      .footer-banner {
+        height: 640px;
+      }
+      .footer-banner-content > p {
+        font-size: 31.538px;
+        letter-spacing: 0.473px;
+        max-width: 74%;
+        margin-bottom: 45px !important;
+      }
+      .footer-content {
+        height: 75px;
+      }
+      .footer-content > p {
+        font-size: 11px;
+      }
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 992px) {
+      .container,
+      .container-md,
+      .container-sm {
+        max-width: 100% !important;
+      }
+      .navbar {
+        padding: 0 6px 0 14px !important;
+      }
+      .hero-content-desktop {
+        margin-bottom: 40px;
+      }
+      .hero-img {
+        position: absolute !important;
+        height: 300px;
+        bottom: 0;
+        left: 10%;
+      }
+      .price-tag {
+        top: 0%;
+        left: 6%;
+      }
+      .price-tag > img {
+        width: 79px;
+      }
+      .price-tag > p {
+        top: 34%;
+        left: 18%;
+        font-size: 20px;
+      }
+    }
+
+    @media only screen and (min-width: 576px) and (max-width: 761px) {
+      .navbar {
+        --bs-navbar-toggler-padding-y: 0.19rem !important;
+      }
+      .navbar-bg {
+        height: 46px;
+      }
+      .navbar-brand > img {
+        width: 50%;
+        margin-left: 14px;
+      }
+      .navbar-toggler {
+        border: none !important;
+      }
+      .navbar-toggler-icon {
+        width: 0.6rem !important;
+      }
+      .hero-img {
+        width: 250px;
+        height: auto;
+      }
+      .price-tag {
+        top: 12%;
+        left: 5%;
+      }
+      .price-tag > img {
+        width: 70px;
+      }
+      .price-tag > p {
+        top: 36%;
+        left: 20%;
+        font-size: 16px;
+      }
+      .hero-section-main-content > h2 {
+        font-size: 22px;
+      }
+      .hero-section-main-content > h5 {
+        font-size: 20px;
+        margin-bottom: 10px !important;
+      }
+      .hero-section-main-content > p {
+        font-size: 10px;
+        margin-bottom: 10px !important;
+      }
+      .timer {
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .timer > p {
+        font-size: 16px;
+      }
+      .timer-time {
+        font-size: 20px;
+        width: 60px;
+        height: 60px;
+      }
+      .timer-label {
+        font-size: 10px;
+      }
+      .form-head {
+        font-size: 10px;
+        margin-bottom: 6px !important;
+      }
+      input {
+        font-size: 10px;
+      }
+      button {
+        padding: 0 20px;
+        font-size: 12px;
+      }
+      .section-paragraph > p {
+        font-size: 22px;
+        letter-spacing: 1.6px;
+      }
+      .banner-container {
+        height: 400px;
+        padding-top: 24px;
+      }
+      .banner-content > p {
+        font-size: 28px;
+        max-width: 66%;
+      }
+      .features-list {
+        flex-wrap: wrap !important;
+      }
+      .features-box {
+        margin-bottom: 40px;
+        width: 46%;
+      }
+      .features-box > p {
+        font-size: 20px;
+        margin-top: 20px;
+        width: 66%;
+      }
+      .footer-banner {
+        height: 500px;
+      }
+      .footer-banner-content > p {
+        font-size: 20px;
+        max-width: 66%;
+        margin-bottom: 0px !important;
+      }
+      .footer-banner-content > img {
+        width: 30%;
+      }
+      .footer-content {
+        height: 80px;
+      }
+      .footer-content > p {
+        font-size: 12px;
+      }
+    }
+
+    @media only screen and (max-width: 575px) {
+      .navbar {
+        --bs-navbar-toggler-padding-y: 0.19rem !important;
+      }
+      .navbar-bg {
+        height: 46px;
+      }
+      .navbar-brand > img {
+        width: 50%;
+      }
+      .navbar-toggler {
+        border: none !important;
+      }
+      .navbar-toggler-icon {
+        width: 0.6rem !important;
+      }
+      .navbar-toggler:focus {
+        box-shadow: none !important;
+      }
+      .navbar-collapse {
+        background-color: #1c1c1c;
+        z-index: 1;
+        padding: 10px 20px 16px 20px;
+      }
+      .active {
+        text-decoration: none;
+      }
+      .hero-flex {
+        padding-top: 0 !important;
+      }
+      .hero-img {
+        display: none !important;
+      }
+      .hero-img-mob {
+        display: block !important;
+        position: relative;
+        left: -24%;
+      }
+      .price-tag {
+        top: 11%;
+        left: 20%;
+      }
+      .price-tag > img {
+        width: 53px;
+      }
+      .price-tag > p {
+        top: 34%;
+        left: 18%;
+        font-size: 13px;
+      }
+      .hero-section-container {
+        padding: 18px 0 0 0;
+      }
+      .hero-section-top-content > h1 {
+        font-size: 24px;
+        letter-spacing: 0.6px;
+      }
+      .hero-section-top-content > h5 {
+        font-size: 11px;
+        margin-bottom: 11px !important;
+      }
+      .hero-section-main-content > h2 {
+        font-size: 18px;
+        letter-spacing: 6.12px;
+      }
+      .hero-section-main-content > h5 {
+        font-size: 16px;
+        margin-bottom: 11px !important;
+      }
+      .hero-section-main-content > p {
+        font-size: 10px;
+        margin-bottom: 15px !important;
+      }
+      .timer {
+        gap: 18px;
+        margin-bottom: 37px !important;
+      }
+      .timer > p {
+        font-size: 8.561px;
+      }
+      .timer-time {
+        font-size: 18px;
+        width: 66px;
+        height: 54px;
+      }
+      .timer-label {
+        font-size: 9px;
+      }
+      .form-main-wrapper {
+        max-width: 92% !important;
+      }
+      .form-head {
+        font-size: 10px;
+        margin-bottom: 11px !important;
+      }
+      .form-wrapper {
+        height: 40px;
+        margin-bottom: 66px;
+      }
+      input {
+        height: 38px;
+        font-size: 10px;
+      }
+      button {
+        padding: 0 28px;
+        font-size: 10px;
+        height: 40px;
+      }
+      .section-paragraph {
+        padding: 51px 0 33px 0;
+      }
+      .section-paragraph > p {
+        font-size: 18px;
+        max-width: 60%;
+        text-align: center;
+        letter-spacing: 0.66px;
+      }
+      .banner-container {
+        padding-top: 12px;
+        padding-left: 4%;
+        height: 169px;
+      }
+      .banner-content > p {
+        font-size: 12px;
+        letter-spacing: 0.123px;
+        max-width: 50%;
+        line-height: 143.487%;
+      }
+      .features-container {
+        padding: 47px 0 13px 0;
+      }
+      .features-list {
+        flex-wrap: wrap !important;
+        text-align: center;
+      }
+      .features-box {
+        margin-bottom: 60px;
+        width: 50%;
+      }
+      .features-box > img {
+        width: 40.419px;
+        height: 40.419px;
+      }
+      .features-box > p {
+        font-size: 12px;
+        letter-spacing: normal;
+        margin-top: 14px;
+        width: 60%;
+      }
+      .footer-banner {
+        height: 186px;
+      }
+      .footer-banner-content > img {
+        width: 30%;
+      }
+      .footer-banner-content > p {
+        font-size: 14px;
+        max-width: 86%;
+        margin-bottom: 15px !important;
+      }
+      .footer-content {
+        height: 60px;
+      }
+      .footer-content > p {
+        font-size: 9px;
+      }
+    }
+
+    @media only screen and (min-width: 360px) and (max-width: 600px) {
+      .price-tag {
+        top: 16%;
+        left: 16%;
+      }
+    }
+
+    @media screen and (orientation: landscape) and (max-height: 700px) {
+      .hero-section-container {
+        padding: 30px 0 0 0;
+      }
+      .hero-section-main-content > h5 {
+        margin-bottom: 12px !important;
+      }
+      .hero-section-top-content > h5 {
+        margin-bottom: 60px !important;
+      }
+      .hero-section-main-content > p {
+        margin-bottom: 20px !important;
+      }
+      .timer {
+        margin-bottom: 40px;
+      }
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-bg">
+      <div class="container">
+        <a class="navbar-brand pe-2" href="#">
+          <img src="./assets/logo.svg" alt="logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon">
+            <img src="./assets/hamburgerMenu.svg" alt="hamburger" />
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Pre-Order</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">News</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <img class="pe-4" src="./assets/profileIcon.svg" alt="profile" />
+            <img src="./assets/cartIcon.svg" alt="cart" />
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero-section-container">
+      <div class="container">
+        <div class="hero-section-top-content text-center">
+          <h1>congratulations</h1>
+          <h5>You are the lucky winner Claim your MOONWALKERS</h5>
+        </div>
+        <div class="row d-flex hero-flex">
+          <div class="col-sm-6 col-md-6 col-lg-6 position-relative">
+            <div class="price-tag">
+              <img src="./assets/price-tag.png" alt="price-tag" />
+              <p>$4.95</p>
+            </div>
+            <img
+              class="img-fluid hero-img"
+              src="./assets/heroImage.png"
+              alt="heroImage"
+            />
+            <img
+              class="img-fluid hero-img-mob"
+              src="./assets/hero-img-mob.png"
+              alt="heroImage"
+            />
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            <div
+              class="d-flex flex-column align-items-center justify-content-center hero-content-desktop"
+            >
+              <div class="hero-section-main-content text-center">
+                <h2>CLAIM YOUR</h2>
+                <h5>Moonwalkers</h5>
+                <p>HURRY UP, <b>LIMITED TIME</b> OFFER IS TICKING DOWN</p>
+              </div>
+              <div
+                id="timer"
+                class="timer d-flex align-items-center justify-content-around"
+              >
+                <div
+                  class="timer-time bg-black text-white d-flex flex-column align-items-center justify-content-center"
+                  id="hours"
+                ></div>
+                <p>:</p>
+                <div
+                  class="timer-time bg-black text-white d-flex flex-column align-items-center justify-content-center"
+                  id="minutes"
+                ></div>
+                <p>:</p>
+                <div
+                  class="timer-time bg-black text-white d-flex flex-column align-items-center justify-content-center"
+                  id="seconds"
+                ></div>
+              </div>
+              <div class="form-main-wrapper">
+                <p class="form-head">Enter your email to claim your reward</p>
+                <form
+                  method="post"
+                  class="form-wrapper d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center">
+                    <img
+                      class="me-2 ms-3"
+                      src="./assets/mailIcon.svg"
+                      alt="mail"
+                    />
+                    <input placeholder="Your email address" />
+                  </div>
+                  <div>
+                    <button>Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="text-center container section-paragraph d-flex align-items-center justify-content-center"
+    >
+      <p>Time is running out - claim your prize before it's gone!</p>
+    </section>
+    <section class="banner-container">
+      <div class="container banner-content">
+        <p>Step into the world's fastest shoes</p>
+      </div>
+    </section>
+    <section class="container features-container">
+      <div
+        class="d-flex align-items-center justify-content-between features-list"
+      >
+        <div class="features-box d-flex flex-column align-items-center">
+          <img src="./assets/featuresOne.svg" alt="features-first" />
+          <p>Walking speed up to 7 mph.</p>
+        </div>
+        <div class="features-box d-flex flex-column align-items-center">
+          <img src="./assets/featuresTwo.svg" alt="features-second" />
+          <p>Hands-free control.</p>
+        </div>
+        <div class="features-box d-flex flex-column align-items-center">
+          <img src="./assets/featuresThree.svg" alt="features-third" />
+          <p>Built for the elements.</p>
+        </div>
+        <div class="features-box d-flex flex-column align-items-center">
+          <img src="./assets/featuresFour.svg" alt="features-fourth" />
+          <p>Quick and easy to learn.</p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="footer-banner footer-banner-content d-flex flex-column align-items-center justify-content-center"
+    >
+      <p>
+        "They were just super fun and yeah, if I had a pair, I would definitely
+        rock them around town."
+      </p>
+      <img src="./assets/wired.svg" alt="wired" />
+    </section>
+    <footer
+      class="footer-content container d-flex align-items-center justify-content-center"
+    >
+      <p>© 2023, Shift Robotics Powered by Bonshore</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // Function to format the numbers with leading zeros
+      function formatNumber(number) {
+        return number.toString().padStart(2, "0");
+      }
+      // Function to update the timer display
+      function updateTimer(distance) {
+        // Time calculations for days, hours, minutes, and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Format the numbers with leading zeros
+        var formattedDays = formatNumber(days);
+        var formattedHours = formatNumber(hours);
+        var formattedMinutes = formatNumber(minutes);
+        var formattedSeconds = formatNumber(seconds);
+        // Output the result in the timer elements
+        // document.getElementById("days").innerHTML =
+        //   formattedDays +
+        //   `<div class="font-light sm:font-normal flex justify-center items-center h-[20%] pb-2 font-sofiaSans text-[12px]">Days</div>`;
+        document.getElementById("hours").innerHTML =
+          formattedHours + `<div class="timer-label">Hours</div>`;
+        document.getElementById("minutes").innerHTML =
+          formattedMinutes + `<div class="timer-label">Minutes</div>`;
+        document.getElementById("seconds").innerHTML =
+          formattedSeconds + `<div class="timer-label">Seconds</div>`;
+      }
+      // Set the date we're counting down to (1 minute from now)
+      var countDownDate = new Date().getTime() + 300000;
+      // Function to start the timer
+      function startTimer() {
+        // Get today's date and time
+        var now = new Date().getTime();
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+        // If the count down is over, reset the timer
+        if (distance <= 0) {
+          updateTimer(0); // Display "00" when the timer starts
+          countDownDate = new Date().getTime() + 300000; // Reset the countdown date
+        } else {
+          // Update the timer display
+          updateTimer(distance);
+        }
+        // Update the timer every second
+        setTimeout(startTimer, 100);
+      }
+      // Start the timer
+      startTimer();
+    </script>
+  </body>
+</html>
